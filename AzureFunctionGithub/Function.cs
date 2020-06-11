@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace AzureFunctionInstagram
+namespace AzureFunctionGithub
 {
-    public static class Function1
+    public static class Function
     {
         [FunctionName("Function")]
         public static async Task<IActionResult> Run(
