@@ -1,5 +1,5 @@
 # azure-function-infopullrequest
-⚡ Azure Function to obtain pull-requests data
+⚡ Azure Function to obtain pull-requests information
 
 A simple Azure function that communicates with the Github API (using [Octokit](https://github.com/octokit/octokit.net)) and get some information about the changed files in Pull-request:
 - Number of files changed.
