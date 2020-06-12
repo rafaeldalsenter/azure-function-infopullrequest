@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using AzureFunctionGithub.CrossCutting;
 using AzureFunctionGithub.CrossCutting.Apis;
 using AzureFunctionGithub.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -43,12 +44,13 @@ namespace AzureFunctionGithub
 
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
+            var teste = EnvironmentVariables.GetGithubUser();
+            
             serviceCollection.AddTransient<ICsprojFileServices, CsprojFileServices>();
             serviceCollection.AddTransient<IPullRequestInfoServices, PullRequestInfoServices>();
             serviceCollection.AddTransient<IGithubConnection, GithubConnection>();
-            serviceCollection.AddTransient<IGitHubClient, GitHubClient>();
-            
-            // TODO Aqui tem que instanciar o GithubClient com algum token
+            serviceCollection.AddTransient<IGitHubClient, GitHubClient>(x 
+                => new GitHubClient(new ProductHeaderValue(EnvironmentVariables.GetGithubUser()), new GithubCredentialStore()));
         }
     }
 }

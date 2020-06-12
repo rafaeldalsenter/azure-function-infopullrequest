@@ -17,4 +17,20 @@
       <ProjectReference Include="..\..\AzureFunctionGithub.Services\AzureFunctionGithub.Services.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="FakeFiles" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="FakeFiles\TwoChangedReferences.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="FakeFiles\OneChangedReferences.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="FakeFiles\NoneChangedReferences.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

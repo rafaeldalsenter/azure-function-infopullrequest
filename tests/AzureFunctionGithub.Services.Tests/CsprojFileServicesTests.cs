@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.IO;
 using Xunit;
 
 namespace AzureFunctionGithub.Services.Tests
@@ -12,24 +11,28 @@ namespace AzureFunctionGithub.Services.Tests
         {
             _csprojFileServices = new CsprojFileServices();    
         }
+
+        private string ReadTxtFromFakeFile(string fileName)
+        {
+            return File.ReadAllText($"./FakeFiles/{fileName}");
+        }
         
         [Fact]
         public void GetChangedReferences_WithMultipleReferencesChanged()
         {
-            var path = "";
-            var resultExpected = new string[3]{ "System.Data", "System.Generics", "Sys.Hrg"};
+            var path = ReadTxtFromFakeFile("TwoChangedReferences.txt");
+            var resultExpected = new string[2]{ "System.Data", "System.Generics"};
 
             var result = _csprojFileServices.GetChangedReferences(path);
             
             Assert.Collection(result, x => Assert.Equal(resultExpected[0], x),
-                x => Assert.Equal(resultExpected[1], x),
-                x => Assert.Equal(resultExpected[2], x));
+                x => Assert.Equal(resultExpected[1], x));
         }
 
         [Fact]
         public void GetChangedReferences_WithOneReferenceChanged()
         {
-            var path = "";
+            var path = ReadTxtFromFakeFile("OneChangedReferences.txt");
             var resultExpected = "System.Data";
 
             var result = _csprojFileServices.GetChangedReferences(path);
@@ -40,17 +43,7 @@ namespace AzureFunctionGithub.Services.Tests
         [Fact]
         public void GetChangedReferences_WithoutReferenceChanged()
         {
-            var path = "";
-
-            var result = _csprojFileServices.GetChangedReferences(path);
-            
-            Assert.Empty(result);
-        }
-
-        [Fact]
-        public void GetChangedReferences_WithoutChanged()
-        {
-            var path = "";
+            var path = ReadTxtFromFakeFile("NoneChangedReferences.txt");
 
             var result = _csprojFileServices.GetChangedReferences(path);
             
