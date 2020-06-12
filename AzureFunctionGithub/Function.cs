@@ -44,8 +44,6 @@ namespace AzureFunctionGithub
 
         private static void ConfigureServices(IServiceCollection serviceCollection)
         {
-            var teste = EnvironmentVariables.GetGithubUser();
-            
             serviceCollection.AddTransient<ICsprojFileServices, CsprojFileServices>();
             serviceCollection.AddTransient<IPullRequestInfoServices, PullRequestInfoServices>();
             serviceCollection.AddTransient<IGithubConnection, GithubConnection>();
