@@ -6,8 +6,8 @@ A simple Azure function that communicates with the Github API (using [Octokit](h
 - Amount of Csproj files changed.
 - If any external references have been updated (Up now compatible with C# repositories).
 
-Input parameters for function: repositoryId and pullrequest number.
-Environment variables required: GITHUB_TOKEN and GITHUB_USER.
+Input parameters for function: **repositoryId** and **pullrequest** number.
+Environment variables required: **GITHUB_TOKEN** and **GITHUB_USER**.
 
 | CodeFactor |
 |:---:|
