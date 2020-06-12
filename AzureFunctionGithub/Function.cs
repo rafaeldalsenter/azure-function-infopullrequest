@@ -18,9 +18,9 @@ namespace AzureFunctionGithub
 {
     public static class Function
     {
-        [FunctionName("Function")]
+        [FunctionName("InfoPullRequest")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)]
             HttpRequest req,
             ILogger log)
         {
