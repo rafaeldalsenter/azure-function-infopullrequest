@@ -11,4 +11,4 @@ Environment variables required: GITHUB_TOKEN and GITHUB_USER.
 
 | CodeFactor |
 |:---:|
-|[![CodeFactor](https://www.codefactor.io/repository/github/rafaeldalsenter/azure-function-infopullrequest/badge?s=f6c7b966804d5fda1d060c0d0513f16c90e7fb33)](https://www.codefactor.io/repository/github/rafaeldalsenter/azure-function-infopullrequest)|
+|[![CodeFactor](https://www.codefactor.io/repository/github/rafaeldalsenter/azure-function-infopullrequest/badge?s=3149a4afc7e40658669bb35acd25e95da1ec2f00)](https://www.codefactor.io/repository/github/rafaeldalsenter/azure-function-infopullrequest)|
