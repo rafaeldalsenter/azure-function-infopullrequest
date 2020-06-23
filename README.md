@@ -1,6 +1,8 @@
 # azure-function-infopullrequest
 ⚡ Azure Function to obtain pull-requests information
 
+Project created for this article: [Azure Function to capture data from Github using OctoKit](https://medium.com/@rafaeldalsenter/azure-function-to-capture-data-from-github-using-octokit-78ff7c801642)
+
 A simple Azure function that communicates with the Github API (using [Octokit](https://github.com/octokit/octokit.net)) and get some information about the changed files in Pull-request:
 - Number of files changed.
 - Amount of Csproj files changed.
